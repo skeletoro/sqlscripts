@@ -1,0 +1,22 @@
+​create table students(
+student_id int not null auto_increment,
+first_name varchar (25) not null,
+last_name varchar (30) not null,
+age int,
+primary key (student_id)
+);
+​create table classes(
+class_id int not null auto_increment, 
+subject varchar(30),
+description varchar(75),
+level int,
+primary key (class_id)
+);
+create table enrollment(
+enrollment_id int not null auto_increment,
+student_id int not null,
+class_id int not null,
+primary key (enrollment_id),
+foreign key (student_id) references students(student_id),
+foreign key (class_id) references classes(class_id)
+);

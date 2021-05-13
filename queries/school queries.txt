@@ -1,0 +1,22 @@
+insert into students (student_id, first_name,last_name, age)
+values (null, "john", "doe", 22),
+(null, "sally", "smith", 20),
+(null, "eric", "winters",24);
+
+insert into classes (class_id, subject,description,level)
+values (null, "physics 101", "intro to physics", 1),
+(null, "english 101", "intro to english", 2),
+(null, "psychology 101" ,"intro to pyschology", 3);
+
+insert into enrollment (enrollment_id,student_id, class_id)
+values (null,1,1),
+(null,1,2),
+(null,2,1),
+(null,2,3),
+(null,3,1),
+(null,3,3);
+
+select s.first_name, s.last_name,c.subject,c.description,c.level 
+from students s
+join enrollment e on s.student_id = e.student_id
+join classes c on e.class_id = c.class_id;
