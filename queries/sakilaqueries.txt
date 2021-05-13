@@ -1,0 +1,26 @@
+select * from actor
+where first_name = "john";
+
+select * from actor
+where last_name = "neeson";
+
+select * from actor
+where (actor_id%10)=0;
+
+select description from film
+where film_id = 100;
+
+select * from film
+where rating = "r";
+
+select * from film
+where rating != "r";
+
+select * from film
+order by length asc limit 10;
+
+select * from film
+where special_features like "%deleted%";
+
+select * from film_list
+where category like "horror";
